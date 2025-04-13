@@ -1,9 +1,11 @@
 import streamlit as st
-import calculations as cal  
+import calculations as cal 
+import time 
 
 st.set_page_config(page_title="Unit Converter", page_icon="⚖", layout="wide")
 
-st.title("Unit Converter")
+st.subheader("Hey!, 👋")
+st.title("Welcome to :red-background[Marjan's Unit Converter]")
 st.markdown("##### Convert between different units of measurement.")
 
 units: list[str] = ["Length", "Mass", "Time", "Temperature"]
@@ -75,3 +77,5 @@ if submit_button:
         }
         result = cal.temp_calc(unit_map[from_unit], unit_map[to_unit], value)
         st.success(f"{value} {from_unit} = {result} {to_unit}")
+
+st.markdown(f"<h6 style='text-align: center; color: black;'>© {time.strftime} 2025 Mohammad Marjan Ahmed. All rights reserved.</h6>", unsafe_allow_html=True)
